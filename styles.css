@@ -636,6 +636,97 @@ section {
     color: var(--color-text-muted);
 }
 
+/* Tic-Tac-Toe Preview Mockup */
+.tictactoe-preview {
+    background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+    position: relative;
+    overflow: hidden;
+}
+
+.tictactoe-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridMovePreview 20s linear infinite;
+}
+
+@keyframes gridMovePreview {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+.tictactoe-mockup {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mockup-header {
+    margin-bottom: 1rem;
+}
+
+.mockup-title {
+    font-family: 'Orbitron', var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.mockup-board {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 8px;
+    background: rgba(26, 26, 46, 0.6);
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.mockup-cell {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.mockup-cell:nth-child(1),
+.mockup-cell:nth-child(3),
+.mockup-cell:nth-child(5) {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.mockup-cell:nth-child(2),
+.mockup-cell:nth-child(4),
+.mockup-cell:nth-child(7) {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
 .project-content {
     padding: var(--spacing-md);
 }
