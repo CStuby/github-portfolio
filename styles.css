@@ -727,6 +727,121 @@ section {
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
+/* Power BI Preview Mockup */
+.powerbi-preview {
+    background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+    position: relative;
+    overflow: hidden;
+}
+
+.powerbi-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(242, 200, 17, 0.1), transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 107, 53, 0.08), transparent 50%);
+}
+
+.powerbi-mockup {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.powerbi-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(242, 200, 17, 0.2);
+}
+
+.powerbi-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #F2C811;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.powerbi-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.dashboard-card {
+    background: rgba(242, 200, 17, 0.1);
+    border: 1px solid rgba(242, 200, 17, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    background: rgba(242, 200, 17, 0.15);
+    border-color: rgba(242, 200, 17, 0.5);
+    transform: translateY(-2px);
+}
+
+.card-title {
+    font-size: 0.7rem;
+    color: rgba(242, 200, 17, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.card-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #F2C811;
+    text-shadow: 0 0 10px rgba(242, 200, 17, 0.3);
+}
+
+.dashboard-chart {
+    grid-column: 1 / -1;
+    background: rgba(242, 200, 17, 0.05);
+    border: 1px solid rgba(242, 200, 17, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 0.5rem;
+    height: 100px;
+}
+
+.chart-bar {
+    flex: 1;
+    background: linear-gradient(to top, #F2C811, #FF6B35);
+    border-radius: 4px 4px 0 0;
+    min-height: 20%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(242, 200, 17, 0.3);
+}
+
+.chart-bar:hover {
+    background: linear-gradient(to top, #FFD700, #FF8C42);
+    box-shadow: 0 0 15px rgba(242, 200, 17, 0.5);
+    transform: scaleY(1.05);
+}
+
 .project-content {
     padding: var(--spacing-md);
 }
